@@ -1,0 +1,40 @@
+@charset "UTF-8";
+//helper
+@import "helpers/_variables";
+
+//mixins
+@import "helpers/_mixins";
+
+// venders
+@import "venders/bootstrap";
+@import "venders/owl.carousel";
+@import "venders/aos";
+
+//components
+@import "components/_normalize";
+@import "components/_common";
+@import "components/header";
+@import "components/_footer";
+@import "components/hero-section";
+@import "components/properties";
+@import "components/_contact";
+@import "components/property-detail";
+@import "components/carousels";
+@import "components/features";
+@import "components/modals";
+@import "components/member-area";
+@import "components/faqs";
+@import "components/history";
+@import "components/left-menu";
+@import "components/chat";
+
+// pages
+@import "pages/landing";
+@import "pages/dashboard";
+@import "pages/blogs";
+@import "pages/agents-page";
+@import "pages/property-reserve";
+@import "pages/customer-profile";
+
+
+

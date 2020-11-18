@@ -1,0 +1,183 @@
+
+.detail-container {
+  margin-top: 40px;
+  
+  .property-short-info {
+    padding-right: 170px;
+    margin-bottom: 30px;
+    
+    .actions {
+      position: absolute;
+      right: 0;
+      top: 28px;
+
+      a {
+        width: 56px;
+        height: 56px;
+        margin-left: 30px;
+        background: $white;
+        @include border-radius(50px, 50px, 50px, 50px);
+        @include box-shadow(0px, 2px, 8px, rgba(63, 63, 63, 0.3));
+
+        img {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+    p {
+      opacity: 0.5;
+      margin-bottom: 5px;
+    }
+    h1 {
+      font-size: 32px;
+      margin-bottom: 4px;
+    }
+
+    .location-info {
+      span { 
+        &.location {
+          margin-right: 30px;
+          opacity: 0.7;
+          font-size: 20px;
+        }
+
+        &.tag {
+          padding: 5px 30px;
+          color: $dark-blue;
+          background: #d3e6ff;
+          @include border-radius(29px, 29px, 29px, 29px);
+        }
+      }
+    }
+  }
+
+  h3 {
+    color: $primary-dim;
+    margin-bottom: 25px;
+    font-size: 26px;
+  }
+  .features {
+    margin-bottom: 40px;
+    .item {
+      font-size: 18px;
+      font-weight: 600;
+    }
+  }
+
+  .detail-section {
+    border-top: 1px solid $light-grey;
+    padding-top: 40px;
+    margin-bottom: 40px;
+
+    h3 {
+      font-size: 26px;
+      margin-bottom: 24px;
+      opacity: 0.8;
+    }
+
+    ul {
+      margin-bottom: -28px;
+      li {
+        display: inline-block;
+        width: 32%;
+        padding-left: 30px;
+        font-weight: 600;
+        opacity: 0.6;
+        margin-bottom: 24px;
+
+        &:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 20px;
+          height: 15px;
+          background: url(../../images/tick.svg) no-repeat;
+          
+        }
+      }
+    }
+
+    .map {
+      @include border-radius(4px, 4px, 4px, 4px);
+    }
+
+    p {
+      font-size: 16px;
+      line-break: 27px;
+      opacity: 0.8;
+
+    }
+  }
+
+  .shaded-box {
+    .btns {
+      margin-top: 40px;
+
+      .btn {
+        width: 100%;
+      }
+    }
+
+    .building-img {
+      margin-bottom: 16px;
+    }
+
+    h4 {
+      font-size: 20px;
+      margin-bottom: 9px;
+      font-weight: 600;
+      opacity: 0.8;
+    }
+
+    .btn.tag-label {
+      color: $orange;
+      font-weight: 600;
+      background-color: #ffdcc8;
+      box-shadow: none;
+      border: 1px solid $light-grey;
+      padding: 3px 0;
+      height: auto;
+      min-width: 112px;
+    }
+
+    .building-info {
+      border-top: 1px solid $light-grey; 
+      padding-top: 40px;
+      margin-top: 40px;
+      text-align: left;
+
+      ul {
+        li {
+          font-size: 16px;
+          line-height: 34px;
+          opacity: 0.8;
+
+          span {
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+
+  .more-info {
+    background: $white;
+    @include box-shadow(0px, 4px, 20px, rgba(0, 0, 0, 0.05));
+    @include border-radius(6px, 6px, 6px, 6px);
+    padding: 10px;
+    margin-bottom: 60px;
+  }
+}
+
+.shaded-box {
+  background-color: $white;
+  padding: 30px;
+  margin-bottom: 40px;
+  @include box-shadow(0px, 4px, 8px, rgba(63, 63, 63, 0.3));
+  @include border-radius(6px, 6px, 6px, 6px);
+
+}

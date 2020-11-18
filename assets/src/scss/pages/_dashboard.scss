@@ -1,0 +1,507 @@
+.dashboard-content {
+  padding: 30px 30px 30px 288px;
+
+  h1 {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 48px;
+    padding-right: 0px;
+
+    span {
+      background-color: $alto;
+      margin-left: 18px;
+      border: 1px solid rgba(7,26,48,.01);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 11px;
+      line-height: 15px;
+      @include border-radius(29px, 29px, 29px, 29px);
+
+    }
+  }
+
+  .property-actions{
+    position: absolute;
+    z-index: 10;
+    right: 30px;
+    top: 60px;
+  }
+
+  .info {
+    color: $primary-dim;
+    font-size: 20px;
+    font-weight: 500;
+    margin: -10px 0 42px;
+
+    span {
+      margin-left: 15px;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 6px 15px;
+      line-height: 20px;
+      @include border-radius(8px, 8px, 8px, 8px);
+
+      &.for-sale {
+        color: $dark-blue;
+        background-color: $alto;
+      }
+
+      &.booked {
+        color: $white;
+        background-color: $primary;
+      }
+
+      &.open {
+        color: $primary;
+        background-color: $grey;
+      }
+    }
+  }
+
+  .status {
+    position: absolute;
+    right: 30px;
+    top: 35px;
+    width: 200px;
+  }
+
+  .add-property {
+    width: 405px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+
+    p {
+      margin: 21px 0 30px;
+      color: $primary-dim;
+      font-size: 16px;
+    }
+  }
+
+  & + footer {
+    padding-left: 260px;
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+}
+
+// dashboard-search
+.dashboard-search {
+  padding: 40px 0;
+
+  form {
+    padding-right: 82px;
+  }
+  .form-control, select.form-control:not([size]):not([multiple]) {
+    background-color: $alto;
+  }
+
+  button.btn {
+    min-width: 52px;  
+    width: 52px;
+    @include border-radius(3px, 3px, 3px, 3px);
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+// property listing
+.property-listing {
+  .property-block {
+    background: $white;
+    padding: 14px;
+    margin-bottom: 30px;
+    min-height: 158px;
+    @include border-radius(8px, 8px, 8px, 8px);
+    @include box-shadow(0px, 4px, 20px, rgba(0, 0, 0, 0.05));
+    padding-left: 200px;
+
+    .property-img {
+      width: 158px;
+      height: 130px;
+      position: absolute;
+      overflow: hidden;
+      left: 14px;
+      top: 14px;
+      @include border-radius(9px, 9px, 9px, 9px);
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .property-detail {
+      .property-header {
+        max-width: 370px;
+        margin-bottom: 10px;
+
+        .label-container {
+          margin-bottom: 10px;
+          span {
+            background-color: $alto;
+            margin-right: 8px;
+            padding: 3px 8px 2px;
+            font-size: 9px;
+            border: 1px solid rgba(7,26,48,.01);
+            font-weight: 600;
+            line-height: 13px;
+            line-height: 15px;
+            border-radius: 29px;
+            -moz-border-radius: 29px;
+            -webkit-border-radius: 29px 29px 29px 29px;
+          }
+        }
+
+        h3 {
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+          font-size: 20px;
+          color: $primary-dim;
+          margin-bottom: 4px;
+          font-weight: 600;
+        }
+
+        .address {
+            font-size: 13px;
+            opacity: 0.5;
+            padding-left: 17px;
+
+            &::before {
+              content: '';
+              position: absolute;
+              width: 12px;
+              height: 16px;
+              background: url(../../images/map-marker-dark.svg) no-repeat;
+              left: 0;
+              top: 2px;
+            }
+        }
+      }
+
+      .price-info {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+
+        .label {
+          display: inline-block;
+          font-size: 11px;
+          opacity: 0.4;
+          margin-right: 10px;
+          vertical-align: top;
+          padding-top: 8px;
+        }
+
+        .price {
+          display: inline-block;
+
+          h5 {
+            font-size: 22px;
+            color: $primary-dim;
+            font-weight: 600;
+            margin-bottom: -5px;
+          }
+          span {
+            opacity: 0.4;
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.more-info {
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+
+  .item {
+    width: 20%;
+    float: left;
+    padding-left: 25px;
+
+    .icon {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 17px;
+
+      img {
+        max-width: 100%;
+      }
+    }
+
+    h4 {
+      font-size: 11px;
+      line-height: 16px;
+      font-weight: 500;
+      opacity: 0.4;  
+      margin-bottom: 0px;
+    }
+
+    span {
+      font-size: 13px;
+      line-height: 19px;
+      opacity: 0.9;
+      font-weight: 500;
+
+      &.price {
+        font-weight: 700;
+
+        font {
+          font-size: 10px;
+          opacity: 0.3;
+          color: $primary;
+          font-weight: 500;
+          margin-left: 6px;
+        }
+
+        &.blue {
+          color: $dark-blue;
+        }
+
+        &.orange {
+          color: $orange;
+        }
+
+      }
+    }
+  }
+}
+
+.add-property-form-container {
+  h2 {
+    margin-top: 50px;
+    font-size: 22px;
+    color: $primary-dim;
+    margin-bottom: 24px;
+  }
+
+  label {
+    color: $primary-dim;
+    font-weight: 500;
+  }
+
+  .checkbox {
+    margin-bottom: 15px;
+  }
+}
+
+.property-status {
+  padding-left: 35px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 25px;
+    height: 22px;
+    background: url(../../images/heart-icon.svg) no-repeat;
+  }
+
+  p {
+    margin-bottom: 4px !important;
+    opacity: 1 !important;
+
+    &.grey-text {
+      color: grey ;
+    }
+
+    &.dark-text {
+      color: $primary ;
+    }
+    
+  }
+}
+
+.inline-dropdown {
+  padding-left: 15px;
+  margin-bottom: 30px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 21px;
+    background: url(../../images/location-map.svg) 10px no-repeat;
+    left: 0;
+    top: 13px;
+    background-position: 0 0;
+  }
+  select.form-control:not([size]):not([multiple]){
+    background: url(../../images/down-arrow-stone.svg) center no-repeat;
+    background-position: calc(100% - 12px);
+    border:none;
+    color: rgba(114, 145, 188, 1);
+    min-width: 150px;
+    width: auto;
+  }
+}
+
+// property-info-block
+.row.property-boxes {
+  [class*="col-"]{
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+}
+.property-info-block {
+  background: $white;
+  @include box-shadow(0px, 4px, 20px, rgba(0, 0, 0, 0.05));
+  @include border-radius(24px, 24px, 24px, 24px);
+  padding: 29px 26px;
+  text-align: center;
+  margin-bottom: 30px;
+
+  .property-img {
+    height: 45px;
+    position: relative;
+
+    img {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+    }
+  }
+
+  h4 {
+    margin: 17px 0 10px;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    color: $primary-dim;
+  }
+
+  .numbers {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 30px;
+    margin-bottom: 22px;
+  }
+
+  .more-info {
+    display: flex;
+
+    .box {
+      flex: 1;
+      color: $primary-dim;
+
+      span {
+        font-weight: 500;
+        font-size: 10px;
+        line-height: 16px;
+        display: block;
+
+        &.count {
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 16px;
+          margin-top: 8px;
+        }
+      }
+    }
+  }
+
+}
+
+// .property-info-inline
+.property-info-inline {
+  background: $white;
+  @include box-shadow(0px, 4px, 20px, rgba(0, 0, 0, 0.05));
+  @include border-radius(18px, 18px, 18px, 18px);
+  padding: 28px 22px 28px 72px;
+  margin-bottom: 20px;
+
+  .img-wrapper {
+    position: absolute;
+    left: 20px;
+    top: 35px;
+    width: 38px;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  h4 {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: $primary-dim;
+    margin-bottom: 5px;
+  }
+
+  .amount {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 22px;
+    color: $primary-dim;
+  }
+
+  &.mini {
+    padding: 15px 10px 15px 44px;
+    .img-wrapper {
+      position: absolute;
+      left: 8px;
+      top: 19px;
+      width: 30px;
+    }
+  }
+  h4 {
+    font-size:12px;
+    line-height: 14px;
+
+  }
+
+  .statistics {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: $dark-grey;
+    margin-top: 24px;
+    span {
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+    img {
+      height: 15px;
+      vertical-align: middle;
+      display: inline-block;
+    }
+  }
+}
+
+.mini-group {
+  .col-md-6 {
+    &:first-child {
+      padding-right: 7px;
+    }
+    &:last-child {
+      padding-left: 7px;
+    }
+  }
+}
+
+.box-shaded {
+  @include box-shadow(0, 4px, 20px, rgba(0,0,0,.05));
+  @include border-radius(14px, 14px, 14px, 14px);
+  background-color: $white;
+  padding: 15px;
+  margin-bottom: 30px;
+}

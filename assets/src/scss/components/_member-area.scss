@@ -1,0 +1,40 @@
+.member-area {
+  max-width: 570px;
+  margin: 60px auto;
+
+  .inner {
+    max-width: 370px;
+    margin: 0 auto;
+    text-align: center;
+
+    .btns {
+      padding: 30px 0 30px;
+      border-bottom: 1px solid $light-grey;
+      margin-bottom: 30px;
+      .btn {
+        width: 100%;
+      }
+    }
+
+    form {
+      margin-bottom: 30px;
+
+      h2 {
+        font-size: 22px;
+        line-height: 33px;
+        opacity: 0.8;
+        margin-bottom: 20px;
+      }
+
+      .forgot-password-text {
+        margin-bottom: 30px;
+      }
+
+      .form-check {
+        label {
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+}

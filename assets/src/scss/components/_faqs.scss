@@ -1,0 +1,73 @@
+
+.faqs, .terms-and-conditions{
+  max-width: 770px;
+  margin: 0 auto;
+  padding: 20px 0;
+
+  .object.orange {
+    left: -30%;
+    top: 20%;
+  }
+
+  .object.blue {
+    right: -40%;
+    top: 40%;
+  }
+
+  p {
+    color: $primary-dim;
+  }
+}
+
+.accordion {
+  .card {
+    margin-bottom: 44px;
+    border: 0;
+    border-radius: 0;
+
+    .card-header {
+      position: relative;
+      padding: 0;
+      border-bottom: 0;
+      background: none;
+      border-radius: 0;
+
+      button {
+        font-size: 22px;
+        background: none;
+        border: 0;
+        padding-right: 0px;
+        width: 100%;
+        text-align: left;
+        cursor: pointer;
+        padding: 0;
+        padding-right: 30px;
+        color: $primary-dim;
+        font-weight: 500;
+
+        &:focus {
+          outline: none;
+        }
+
+        &:after {
+          content: '';
+          width: 25px;
+          height: 25px;
+          right: 0;
+          position: absolute;
+          background: url(../../images/minus-icon.svg) no-repeat center;
+        }
+
+        &[aria-expanded="true"]:after {
+          background: url(../../images/plus-icon.svg) no-repeat center;
+        }
+      }
+    }
+
+    .card-body {
+      padding: 8px 30px 0 0;
+      font-size: 16px;
+      color: $primary-dim;
+    }
+  }
+}

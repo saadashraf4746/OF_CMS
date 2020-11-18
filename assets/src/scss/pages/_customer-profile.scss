@@ -1,0 +1,24 @@
+.customer-detail {
+  .profile-section {
+    max-width: 700px;
+    margin-bottom: 60px;
+
+    &.edit-profile {
+      max-width: 100%;
+
+      .cta-wrapper {
+        text-align: right;
+        padding: 10px 0 30px;
+      }
+    }
+  }
+
+  .tabs-container {
+    padding-top: 60px;
+
+    .radio-group {
+      max-width: 340px;
+      margin-bottom: 40px;
+    }
+  }
+}

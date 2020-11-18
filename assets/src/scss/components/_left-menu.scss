@@ -1,0 +1,116 @@
+.left-menu {
+  width: 230px;
+  background-color: $white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  padding: 36px;
+  z-index: 10;
+
+  .logo {
+    margin-bottom: 40px;
+  }
+
+  .menu {
+    li {
+      display: block;
+      a{
+        padding-left: 32px;
+        color: $primary-dim;
+        opacity: 0.8;
+        font-size: 12px;
+        line-height: 32px;
+        margin-bottom: 20px;
+
+        &:after {
+          content: '';
+          position: absolute;
+          width: 4px;
+          height: 26px;
+          background-color: $dark-blue;
+          right: -36px;
+          top: 50%;
+          transform: translateY(-50%);
+          @include border-radius(6px, 6px, 6px, 6px);
+          display: none;
+        }
+
+        span {
+          position: absolute;
+          max-width: 18px;
+          left: 0;
+          top: -1px;
+          
+          img {
+            max-width: 100%;
+          }
+        }
+
+        &:hover {
+          opacity: 1;
+
+          &:after {
+            display: block;
+          }
+        }
+      }
+
+      &.active {
+        a {
+          opacity: 1;
+          font-weight: 600;
+
+          &:after {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+  .user-info-container {
+    position: absolute;
+    bottom: 36px;
+
+    .user-info {
+      padding-left: 60px;
+      margin-bottom: 42px;
+
+      .user-dp {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        overflow: hidden;
+        width: 48px;
+        height: 48px;
+        background: $light-blue;
+        color: $white;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 48px;
+        text-align: center;
+        @include border-radius(100%, 100%, 100%, 100%);
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .user-detail {
+        h4 {
+          font-size: 13px;
+          color: $primary-dim;
+          font-weight: 500;
+          margin-bottom: 0;
+        }
+
+        p {
+          color: $grey;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}

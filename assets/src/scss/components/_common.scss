@@ -1,0 +1,945 @@
+* {
+  transition: 0.2s ease-in-out all;
+  position: relative;
+}
+html, body {
+  height: 100%;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color: $primary;
+  overflow-x: hidden;
+
+  &.member-area-body {
+    background: $light-blue;
+  }
+
+  &.dashbaord-body {
+    background-color: $bg-light;
+  }
+}
+
+a, span {
+  display: inline-block;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+a {
+  color: $dark-blue;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: inline-block;
+    list-style: none;
+
+    a {
+      display: block;
+    }
+  }
+}
+
+.btn {
+  min-width: 160px;
+  height: 48px;
+  line-height: 33px;
+  font-size: 14px;
+  @include border-radius(35px, 35px, 35px, 35px);
+  @include box-shadow(0px, 2px, 8px, rgba(63, 63, 63, 0.3));
+
+  &.btn-primary {
+    background-color: $dark-blue;
+    border-color: $dark-blue;
+  }
+
+  &.btn-outline-primary {
+    border-color: $dark-blue;
+    color: $dark-blue;
+
+    &:hover {
+      background-color: $dark-blue;
+      color: $white !important;
+    }
+  }
+
+  &.btn-warning {
+    background-color: $orange;
+    border-color: $orange;
+    color: $white;
+  }
+
+  &.btn-cussess {
+    background-color: $green-whatsapp;
+    border-color: $green-whatsapp;
+    color: $white;
+  }
+
+  &.btn-outline-success {
+    background-color: transparent;
+    border-color: $green-whatsapp;
+    color: $green-whatsapp;
+  }
+
+
+
+  &.btn-lg {
+    height: 56px;
+    font-size: 16px;
+    line-height: 40px;
+  }
+  
+  &.cta {
+    min-width: 240px;
+
+    &:after {
+      content: '';
+      display: inline-block;
+      vertical-align: middle;
+      width: 26px;
+      height: 17px;
+      background: url(../../images/arrow-right-white.svg) no-repeat;
+      margin-left: 16px;
+    }
+  }
+
+  &.with-left-icon {
+    text-align: center;
+    font-size: 18px;
+    min-width: 260px;
+
+    span {
+      margin-right: 10px;
+      display: inline;
+    }
+  }
+
+}
+
+.btn-link {
+  color: $primary;
+  display: inline-block;
+  vertical-align: middle;
+  background: none;
+  border: 0;
+  margin-top: 10px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.custom-dropdown {
+  padding-right: 16px;
+  min-width: 50px;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 13px;
+    height: 10px;
+    background: url(../../images/down-arrow-stone.svg) no-repeat center;
+  }
+  
+  .active-item {
+    color: $grey;
+  }
+
+  ul {
+    background: $white;
+    width: 130px;
+    @include border-radius(4px, 4px, 4px, 4px);
+    @include box-shadow(0, 0, 3px, $light-grey);
+    position: absolute;
+    display: none;
+    z-index: 10;
+    
+    li {
+      display: block;
+      cursor: pointer;
+      padding: 10px 15px;
+      color: grey;
+
+      &:hover {
+        background-color: $stone-grey ;
+      }
+    }
+  }
+
+  &:hover {
+    ul {
+      display: block;
+    }
+  }
+
+  &.control {
+    border: 1px solid $grey;
+    height: 48px;
+    @include border-radius(4px, 4px, 4px, 4px);
+    padding-right: 32px;
+
+    .active-item {
+      line-height: 48px;
+      padding-left: 10px;
+    }
+
+    ul {
+      border: 1px solid $grey;
+      width: auto;
+      left: -1px;
+      right: -1px;
+      box-shadow: none;
+    }
+
+    &:after {
+      right: 15px;
+    }
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $primary;
+  margin-top: 0;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 54px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 48px;  
+
+  @include breakpoint(md) {
+    font-size: 28px;
+  }
+}
+
+.form-control {
+  padding: 11px 12px;
+  font-size: 14px;
+  height: 48px;
+
+  &.with-left-icon {
+    padding-left: 33px;
+    
+    &.search {
+      background: url(../../images/search.svg) no-repeat center;
+      background-position: 10px;
+    }
+
+    &.location-map {
+      background: url(../../images/location-map.svg) no-repeat center;
+      background-position: 10px;
+    }
+  }
+
+  &:focus {
+    box-shadow: none;
+  }
+}
+textarea.form-control {
+  height: 144px;
+}
+
+select.form-control:not([size]):not([multiple]) {
+  height: 48px;
+  appearance: none;
+  -webkit-appearance: none;
+  background: $white url(../../images/down-arrow-stone.svg) no-repeat center;
+  background-position: calc(100% - 12px);
+}
+
+.input-group {
+  .input-group-prepend {
+    button.btn {
+      background: $stone-grey;
+      color: $grey;
+      border: 1px solid #ced4da;
+      border-right: none;
+      @include border-radius(4px, 0, 0, 4px);
+      box-shadow: none;
+      min-width: 120px;
+      width: 120px;
+
+      &.dropdown-toggle::after{
+        background: url(../../images/down-arrow-stone.svg) center no-repeat;
+        width: 14px;
+        height: 14px;
+        border: none;
+        vertical-align: middle;
+      }
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+// sections
+section {
+  padding: 52px 0;
+  position: relative;
+}
+
+// show more link
+.show-more {
+  color: $dark-blue;
+  font-size: 16px;
+  font-weight: 600;
+  z-index: 10;
+  &:after {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 25px;
+    height: 17px;
+    margin-left: 16px;
+    background: url(../../images/arrow-right-blue.svg) no-repeat;
+  }
+}
+
+// carousel nav buttons 
+.owl-carousel.carousel .owl-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 30px;
+  right: 30px;
+
+  button {
+    width: 36px;
+    height: 36px;
+    background: $white url(../../images/left-arrow-dark.svg) no-repeat center;
+    font-size: 0;
+    @include border-radius(50px, 50px, 50px, 50px);
+    position: absolute;
+    @include box-shadow(0px, 2px, 4px, rgba(63, 63, 63, 0.3));
+
+    &.owl-next {
+      right: 0;
+      -ms-transform: rotate(180deg); /* IE 9 */
+      transform: rotate(180deg); /* Standard syntax */
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+// property listing
+.property-listings {
+  padding-top: 0;
+
+  h3 {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 16px;
+  }
+
+  ul {
+    margin-bottom: 30px;
+    li {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+// objects
+.object {
+  width: 65px;
+  height: 65px;
+  @include border-radius(50px, 50px, 50px, 50px);
+  position: absolute;
+  opacity: 0.2;
+
+  &.orange {
+    background: $orange;
+  }
+
+  &.blue {
+    width: 91px;
+    height: 91px;
+    background: $dark-blue;
+  }
+}
+
+// breadcrumb 
+.breadcrumb-realestate {
+  li {
+    opacity: 0.5;
+    padding: 0 10px 0 6px;
+
+    &:after {
+      content: '|';
+      position: absolute;
+      right: -1px;
+      top: 1px;
+    }
+
+    &:last-child {
+      &::after {
+        display: none;
+      }
+    }
+
+    a {
+      color: $primary;
+    }
+  }
+}
+// pagination
+.costum-pagination{
+  margin-top: 20px;
+
+  ul{
+    display: inline-block;
+    margin-right: 20px;
+
+    li{
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 5px;
+
+      a{
+        width: 30px;
+        height: 30px;
+        color: $primary;
+        text-align: center;
+        line-height: 30px;
+        @include border-radius(50px, 50px, 50px, 50px);
+      }
+      &:hover {
+        a {
+          background: $light-grey;
+        }
+      }
+
+      &.active {
+        a {
+          background: $dark-blue;
+          color: $white;
+        }
+      }
+
+      &.previous, &.next {
+        margin: 0 10px;
+        a {
+          width: 36px;
+          height: 36px;
+          font-size: 0;
+          background: url(../../images/left-arrow-dark.svg) center no-repeat $white;
+          @include box-shadow(0, 2px, 4px, rgba(63,63,63,.3));
+        }
+      }
+
+      &.next { 
+        a { 
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+
+  .show-per-page {
+    display: inline-block;
+    vertical-align: middle;
+
+    select.form-control:not([size]):not([multiple]) {
+      display: inline-block;
+      width: 70px;
+      height: 34px;
+      vertical-align: middle;
+      padding: 5px 10px;
+    }
+  }
+}
+
+// radio group
+.radio-group {
+  display: flex;
+  background-color: $stone-grey;
+  overflow: hidden;
+  @include border-radius(35px, 35px, 35px, 35px);
+
+
+  label {
+    flex: 1;
+    cursor: pointer;
+    margin: 0;
+
+    span {
+      color: $grey;
+      height: 40px;
+      width: 100%;
+      text-align: center;
+      transition: none;
+      line-height: 40px;
+
+      font {
+        z-index: 2;
+      }
+    }
+
+    input {
+      opacity: 0;
+      position: absolute;
+      
+      &:checked + span {
+        color: $white;
+
+        &:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          background: $dark-blue;
+          z-index: 1;
+          @include border-radius(35px, 35px, 35px, 35px);
+        }
+      }
+    }
+  }
+}
+
+// page heading
+h1.page-heading {
+  font-size: 36px;
+  margin-bottom: 100px;
+  max-width: 317px;
+
+  @include breakpoint(sm) {
+    font-size: 28px;
+  }
+}
+
+.container-970 {
+  max-width: 970px;
+  margin: 0 auto;
+}
+// page header 
+.page-header {
+  background: $orange url(../../images/buildings.svg);
+  padding: 50px 70px;
+  margin-bottom: 100px;
+  
+  h1 {
+    font-size: 36px;
+    color: $white;
+  }
+  .sub-title{
+    font-size: 16px;
+    color: $white;
+  }
+}
+
+// about block
+.about-block {
+  max-width: 80%;
+  margin: 0 auto 80px;
+  
+  &:before {
+    content: '';
+    top: -25px;
+    bottom: -25px;
+    left: -27px;
+    width: 8px;
+    background-color: $orange;
+    opacity: 0.3;
+    position: absolute;
+    @include border-radius(6px, 0, 0, 6px)
+  }
+
+  h3 {
+    color: $primary-dim;
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 16px;
+    color: $primary-dim;
+  }
+}
+
+hr {
+  border-top: 1px solid $primary;
+  opacity: 0.2;
+  margin: 40px 0;
+  height: 1px;
+}
+
+// upload-file
+.upload-file {
+  height: 210px;
+  background: $white url(../../images/photo.svg) center no-repeat;
+  border: 1px dashed $grey;
+  @include border-radius(4px, 4px, 4px, 4px);
+
+  input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    cursor: pointer;
+    z-index: 1;
+    width: 100%;
+    opacity: 0;
+  }
+}
+
+// checkbox {
+.checkbox {
+  label {
+    padding-left: 30px;
+    font-weight: normal !important;
+    cursor: pointer;
+    color: $primary-dim;
+
+    span {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 18px;
+      height: 18px;
+      background-color: $white;
+      border: 1px solid rgba(0, 0, 0, 0.5);
+      @include border-radius(4px, 4px, 4px, 4px);
+    }
+
+    input {
+      position: absolute;
+      opacity: 0;
+
+      &:checked + span {
+        background-color: $dark-blue;
+        border-color: $dark-blue;
+      }
+    }
+  }
+}
+
+.radio-group-lg {
+  background-color: $white;
+  padding: 20px 100px 20px 55px;
+  margin-bottom: 30px;
+  display: block;
+  @include border-radius(4px, 4px, 4px, 4px);
+  cursor: pointer;
+
+  span.radio {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    @include border-radius(50px, 50px, 50px, 50px);
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    background-color: $white;
+
+  }
+
+  input {
+    position: absolute;
+    opacity: 0;
+
+    &:checked + span{
+      border-color: $orange;
+
+      &:before {
+        content: '';
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        top: 3px;
+        left: 3px;
+        @include border-radius(50px, 50px, 50px, 50px);
+        background-color: $orange;
+      }
+    }
+  }
+
+  .detail {
+    h4 {
+      color: $primary-dim;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 6px;
+
+      & + span {
+        opacity: 0.6;
+        font-size: 14px;
+        font-weight: normal;
+      }
+    }
+  }
+
+  .price {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: right;
+
+    span {
+      display: block;
+
+      &.price-label {
+        font-size: 20px;
+        font-weight: 600;
+        color: $primary-dim;
+        
+      }
+
+      &.label {
+        opacity: 0.5;
+        font-size: 12px;
+        font-weight: 300;
+      }
+    }
+  }
+
+}
+
+// radio group
+.radio-group-cutom {
+  margin-bottom: 26px;
+
+  label {
+    display: block;
+    padding-left: 30px;
+    font-size: 14px;
+    line-height: 21px;
+    cursor: pointer;
+    margin-bottom: 11px;
+
+    span {
+      transition: none;
+
+      &.radio {
+        width: 18px;
+        height: 18px;
+        @include border-radius(50px, 50px, 50px, 50px);
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        position: absolute;
+        left: 0;
+        top: 1px;
+      }
+    }
+
+    input {
+      position: absolute;
+      left: 0;
+      opacity: 0;
+
+      &:checked {
+        & + .radio {
+          border-width: 2px;
+          
+          &:after {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            @include border-radius(50px, 50px, 50px, 50px);
+            left: 3px;
+            top: 3px;
+            background-color: rgba(0,0,0,.5);
+            transition: none;
+          }
+
+          & + .lable-text {
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+
+  &.orange {
+    label {
+      input:checked{
+        & + .radio {
+          border-color: $orange;
+          
+          &:after {
+            background-color: $orange;
+          }
+        }
+      }
+    }
+  }
+}
+
+.link-lg {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  color: $dark-blue;
+  background: none;
+  border: none;
+
+  &:focus {
+    outline: none;
+    cursor: pointer;
+  }
+}
+
+.upload-box {
+  text-align: center;
+  margin-bottom: 30px;
+
+  .photo {
+    background: $white url(../../images/photo.svg) center no-repeat;
+    border: 1px dashed $grey;
+    height: 170px;
+    @include border-radius(4px, 4px, 4px, 4px);
+    min-height: 170px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+    }
+  }
+  .add {
+    width: 44px;
+    height: 44px;
+    background: url(../../images/add-blue.svg);
+    margin: -23px 0 11px;
+    
+    input {
+      cursor: pointer;
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+
+  label {
+    font-size: 14px;
+    line-height: 21px;
+    color: $primary-dim;
+    display: block;
+  }  
+}
+
+.thank-you {
+  max-width: 770px;
+  margin: 50px auto;
+  text-align: center;
+
+  h1{
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 48px;
+    margin: 30px 0;
+  }
+  
+  p {
+    font-size: 18px;
+    opacity: 0.7;
+    margin-bottom: 60px;
+  }
+}
+
+// tabs-container
+.tabs-container {
+  .tabs-content {
+    .content{
+      display: none;
+    }
+  }
+}
+
+// custom-table
+.custom-table {
+  width: 100%;
+  border-collapse:separate; 
+  border-spacing: 0 1em;
+  margin-bottom: 40px;
+
+  thead {
+    background: $light;
+    tr {
+      th {
+        padding: 13px 27px;
+        font-size: 14px;
+        opacity: 0.7;
+        font-weight: 500;
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      background-color: $white;
+      @include box-shadow(0px, 4px, 20px, rgba(0, 0, 0, 0.05));
+      margin-bottom: 15px;
+
+      td {
+        font-size: 15px;
+        color: $primary-dim;
+        font-weight: 500;
+        padding: 13px 27px;
+
+        a {
+          opacity: 0.8;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+// upload file
+.upload-file-add {
+  width: 44px;
+  height: 44px;
+  background: url(../../images/add-blue.svg);
+  margin: -23px auto 30px;
+
+  input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+}
+
+// colors
+.orange-light {
+  color: $orange-light;
+}
+
+.orange {
+  color: $orange;
+}

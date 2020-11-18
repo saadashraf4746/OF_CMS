@@ -1,0 +1,104 @@
+.serach-form {
+  .radio-group {
+    width: 240px;
+  }
+
+  p {
+    line-height: 24px;
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+}
+
+.hero-section {
+  height: 630px;
+
+  @include breakpoint(md) {
+    height: auto;
+    padding-bottom: 0;
+  }
+
+  .container {
+    position: relative;
+  }
+
+  .serach-form {
+    width: 370px;
+    display: inline-block;
+
+    @include breakpoint(md) {
+      width: auto;
+      display: block;
+    }
+
+    .col-md-6, .col-md-12 {
+      padding-left: 7px;
+      padding-right: 7px;
+    }
+    
+    .form-container {
+      margin: 0 8px;
+    }
+  }
+}
+
+
+.search-tabs-container {
+  .tabs {
+    ul {
+      width: 240px;
+      height: 40px;
+      @include border-radius(35px, 35px, 35px, 35px);
+      background-color: $stone-grey;
+      display: flex;
+      position: relative;
+
+      &:before {
+        content: '';
+        position: absolute;
+        width: 120px;
+        height: 40px;
+        background: $dark-blue;
+        @include border-radius(35px, 35px, 35px, 35px);
+        left: 0;
+      }
+
+      li {
+        flex: 1;
+        text-align: center;
+        line-height: 40px;
+        color: $grey;
+        z-index: 1;
+        cursor: pointer;
+      }
+
+      &.tab-buy {
+        #tab-buy {
+          color: $white;
+        }
+      }
+
+      &.tab-rent {
+        #tab-rent {
+          color: $white;
+        }
+
+        &:before {
+          left: auto;
+          right: 0;
+        }
+      }
+      
+    }
+  }
+
+  .tabs-content {
+    .form-container {
+      padding: 30px 8px 30px;
+
+      .search-btn {
+        margin-top: 5px;
+      }
+    }
+  }
+}

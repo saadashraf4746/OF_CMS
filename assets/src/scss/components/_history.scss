@@ -1,0 +1,56 @@
+.history-container {
+  max-width: 970px;
+  min-height: 1000px;
+  padding-top: 180px;
+  background: url(../../images/page-center-curve.svg) center top;
+
+  @include breakpoint(md) {
+    padding-top: 0px;
+    background-repeat: repeat-y;
+  }
+
+  .history-block {
+    width: 470px;
+    padding: 30px;
+    background: $white;
+    border: 1px solid $orange-light;
+    margin-bottom: 240px;
+    @include border-radius(12px, 12px, 12px, 12px);
+    @include box-shadow( 0px, 4px, 8px, rgba(63, 63, 63, 0.3));
+
+    @include breakpoint(lg) {
+      width: 450px;
+    }
+
+    @include breakpoint(md) {
+      margin: 0 auto 50px;
+    }
+
+    @include breakpoint(sm) {
+      max-width: 320px;
+    }
+
+    &:nth-child(odd) {
+      float: right;
+      margin-top: -200px;
+
+      @include breakpoint(md) {
+        float: none;
+        margin-top: 0;
+      }
+    }
+
+
+    h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+      color: $primary-dim;
+    }
+
+    p {
+      font-size: 16px;
+      color: $primary-dim;
+      line-height: 36px;
+    }
+  }
+}

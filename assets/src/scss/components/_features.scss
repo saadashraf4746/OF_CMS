@@ -1,0 +1,49 @@
+.features {
+  display: flex;
+  align-items: flex-end;
+
+  .item {
+    flex: 1;
+    opacity: 0.8;
+    
+    &:before {
+      content: '';
+      display: inline-block;
+      margin-right: 10px;
+      vertical-align: bottom;
+      opacity: 0.9;
+    }
+
+    &.beds {
+      &:before {
+        width: 29px;
+        height: 21px;
+        background: url(../../images/feature-icons/beds.svg) no-repeat;
+      }
+    }
+
+    &.baths {
+      &:before {
+        width: 31px;
+        height: 28px;
+        background: url(../../images/feature-icons/baths.svg) no-repeat;
+      }
+    }
+
+    &.area {
+      &:before {
+        width: 23px;
+        height: 23px;
+        background: url(../../images/feature-icons/area.svg) no-repeat;
+      }
+    }
+
+    &.house-type {
+      &:before {
+        width: 38px;
+        height: 37px;
+        background: url(../../images/feature-icons/house-type.svg) no-repeat;
+      }
+    }
+  }
+}

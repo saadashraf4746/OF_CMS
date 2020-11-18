@@ -1,0 +1,215 @@
+header {
+  background-color: $white;
+
+  .header-inner {
+    position: relative;
+    height: 90px;
+
+    .logo {
+      width: 90px;
+      position: absolute;
+      left: 0;
+      top: 30px;
+      z-index: 1;
+    }
+
+    .navigation {
+      padding: 0px 310px 0 184px;
+      position: relative;
+      transition: 0.3s ease right;
+      
+      @include breakpoint(lg) {
+        padding: 20px 15px;
+        position: fixed;
+        right: -350px;
+        top: 0;
+        bottom: 0px;
+        width: 300px;
+        background: $white;
+        box-shadow: 0px 0px 3px #bfc6d2;
+        z-index: 10;
+      }
+
+      .close-nav {
+        width: 30px;
+        height: 30px;
+        box-shadow: 0px 0px 3px #bfc6d2;
+        background: $white url(../../images/down-arrow-stone.svg) center no-repeat;
+        border-radius: 50px;
+        transform: rotate(-90deg);
+        position: absolute;
+        left: -14px;
+        top: 20px;
+        cursor: pointer;
+        display: none;
+
+        @include breakpoint(lg) {
+          display: block;
+        }
+      }
+
+      .mobile-logo {
+        display: none;
+
+        @include breakpoint(lg) {
+          display: block;
+          padding: 0 30px 15px;
+          border-bottom: 1px solid $light-grey;
+          margin: 0 -15px 30px;
+        }
+      }
+
+      ul {
+        li {
+          @include breakpoint(lg) {
+            display: block;
+          }
+
+          a {
+            font-size: 15px;
+            color: $primary;
+            border-top: 5px solid transparent;
+            line-height: 85px;
+            padding: 0 10px;
+            margin: 0 5px;
+
+            @include breakpoint(lg) {
+              line-height: 44px;
+              border-top: none;
+            }
+
+            &:hover, &.active {
+              color: $orange;
+              border-top-color: $orange;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+
+      
+    }
+
+    .masthead {
+      position: absolute;
+      right: 0;
+      top: 23px;
+      z-index: 1;
+
+      @include breakpoint(lg) {
+        right: 65px;
+      }
+
+      .item {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 20px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        .favourit{
+          width: 24px;
+          height: 22px;
+          vertical-align: middle;
+          background: url(../../images/heart-icon.svg) no-repeat;
+        }
+
+        .btn {
+          min-width: 129px;
+          box-shadow: none;
+        }
+      }
+    }
+
+    .nav-toggle {
+      position: absolute;
+      right: 0;
+      top: 27px;
+      width: 40px;
+      height: 40px;
+      display: none;
+      z-index: 1;
+      cursor: pointer;
+
+      @include breakpoint(lg) {
+        display: block;
+      }
+
+      &:before, &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        background: $primary;
+        height: 4px;
+        width: 33px;
+        border-radius: 3px;
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px 3px 3px 3px;
+        top: 14px;
+        right: 4px;
+        transition: all .3s ease;
+      }
+
+      &:after {
+        width: 21px;
+        margin-top: 12px;
+      }
+
+      &:hover {
+        &:before {
+          width: 21px;
+          right: 16px;
+          transition: all .3s ease;
+        }
+
+        &:after {
+          width: 33px;
+          transition: all .3s ease;
+        }
+      }
+    }
+  }
+
+  &.login-header {
+    .header-inner  {
+      text-align: center;
+      padding-top: 28px;
+
+      .logo {
+        position: static;
+      }
+    }
+  }
+
+  &.session-out {
+    .header-inner {
+      .masthead {
+        @include breakpoint(lg) {
+          right: 0;
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint(lg) {
+  body.show-nav {
+    &:before {
+      content: '';
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: #132235;
+      opacity: .85;
+      z-index: 10;
+      transition: 0.3s ease all;
+    }
+    .navigation {
+      right: 0;
+    }
+  }
+}
